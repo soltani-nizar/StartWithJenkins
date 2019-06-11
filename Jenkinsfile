@@ -5,16 +5,13 @@ pipeline {
         jdk 'jdk' 
     }
     stages {
-        stage ('Initialize') {
+        stage ('step 1 in pipeline') {
             steps {
-                sh '''
-                    echo "PATH = ${PATH}"
-                    echo "M2_HOME = ${M2_HOME}"
-                ''' 
+                 echo "PATH = ${PATH}"
             }
         }
 
-        stage ('Build') {
+        stage ('step 2 in pipeline') {
             steps {
                 echo 'This is a minimal pipeline.'
             }
