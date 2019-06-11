@@ -8,7 +8,7 @@ pipeline {
         stage ('build project ...') {
             steps {
                  echo "nizar your project in building ...."
-                 echo "PATH = ${PATH}"
+                 mvn -Dmaven.test.failure.ignore=true install
             }
         }
 
