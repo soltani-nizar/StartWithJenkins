@@ -5,16 +5,21 @@ pipeline {
         jdk 'jdk' 
     }
     stages {
-        stage ('step 1 in pipeline') {
+        stage ('build project ...') {
             steps {
-                 echo "nizar"
+                 echo "nizar your project in building ...."
                  echo "PATH = ${PATH}"
             }
         }
 
-        stage ('step 2 in pipeline') {
+        stage ('Run Unit Test ...') {
             steps {
-                echo 'This is a minimal pipeline.'
+                 echo "nizar your project in tested"
+            }
+        }
+          stage ('Run sonarQuality code....') {
+            steps {
+                 echo "nizar sonar is testing your code "
             }
         }
     }
