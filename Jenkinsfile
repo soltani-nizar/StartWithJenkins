@@ -7,6 +7,7 @@ pipeline {
     stages {
         stage ('step 1 in pipeline') {
             steps {
+                 echo "nizar"
                  echo "PATH = ${PATH}"
             }
         }
