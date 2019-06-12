@@ -1,17 +1,19 @@
 pipeline {
     agent any
-	   tools { 
-        maven 'maven' 
-        jdk 'jdk' 
-    }
+
 	 stages {
    
     stage("Build Application"){            
 				steps {
+        script{
+        withMaven(maven : 'maven'){
+          sh ' mvn clean compile -f pom.xml '
+        }
+        }
               		    
-              		   sh ' mvn clean compile -f pom.xml '
+         }    		 
               		  
-		               }
+		                
      }
 			
 
