@@ -1,36 +1,28 @@
 pipeline {
+
     agent any
-
-	 stages {
-   
-    stage("Build Application"){            
-				steps {
-        script{
-		{maven : 'maven'}
-		{
-          sh ' mvn clean compile -f pom.xml '
+    tools {
+        maven 'maven' 
+    }
+    stages {
+        stage('Compile stage') {
+            steps {
+                bat "mvn clean compile" 
         }
+    }
+
+         stage('testing stage') {
+             steps {
+                bat "mvn test"
         }
-              		    
-         }    		 
-              		  
-		                
-     }
-			
+    }
 
-     stage ('Run Unit Test ...') {
-       steps {
-                 echo "nizar your project in tested"
-                 }
-		
-}
-     stage("SonarQube Analysis"){    
-	 steps {
-                 echo "nizar your project in tested"
-                 }
-	
-}        	
+          stage('deployment stage') {
+              steps {
+                bat "mvn deploy"
+        }
+    }
 
-}
+  }
 
 }
