@@ -16,19 +16,11 @@ pipeline {
 			
 
      stage ('Run Unit Test ...') {
-              steps {
-                  WithMaven(maven : 'maven'){
-              		    sh'mvn test'
-                 }
-     }
+       echo "nizar ok"
 		
 }
      stage("SonarQube Analysis"){    
-			   steps {
-                  WithMaven(maven : 'maven'){
-              		    sh'mvn deploy'
-                 }
-      }                  
+	 echo "nizar ok 2"               
 	
 }        	
 
