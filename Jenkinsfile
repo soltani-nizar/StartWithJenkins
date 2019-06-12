@@ -4,9 +4,9 @@ pipeline {
    
     stage("Build Application"){            
 				steps {
-              		    WithMaven(maven : 'maven'){
+              		    
               		   sh'mvn clean compile'
-              		    }
+              		  
 		               }
      }
 			
