@@ -16,11 +16,15 @@ pipeline {
 			
 
      stage ('Run Unit Test ...') {
-       echo "nizar ok"
+       steps {
+                 echo "nizar your project in tested"
+                 }
 		
 }
      stage("SonarQube Analysis"){    
-	 echo "nizar ok 2"               
+	 steps {
+                 echo "nizar your project in tested"
+                 }
 	
 }        	
 
