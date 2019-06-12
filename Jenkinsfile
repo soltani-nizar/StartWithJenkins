@@ -18,14 +18,16 @@ pipeline {
                  }
      }
 		
-
+}
      stage("SonarQube Analysis"){    
 			   steps {
                   WithMaven(maven : 'maven'){
               		    mvn deploy
                  }
       }                  
-			
+	
 }        	
+
+}
 
 }
