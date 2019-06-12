@@ -6,7 +6,8 @@ pipeline {
     stage("Build Application"){            
 				steps {
         script{
-        withMaven(maven : 'maven'){
+		{maven : 'maven'}
+		{
           sh ' mvn clean compile -f pom.xml '
         }
         }
