@@ -9,7 +9,7 @@ pipeline {
     stage("Build Application"){            
 				steps {
               		    
-              		   sh'mvn clean compile'
+              		   sh'mvn clean compile -f pom.xml'
               		  
 		               }
      }
