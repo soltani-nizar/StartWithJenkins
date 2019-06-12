@@ -5,7 +5,7 @@ pipeline {
     stage("Build Application and Upload to Nexus"){            
 				steps {
               		    WithMaven(maven : 'maven'){
-              		    mvn clean compile
+              		   sh'mvn clean compile'
               		    }
 		               }
      }
@@ -14,7 +14,7 @@ pipeline {
      stage ('Run Unit Test ...') {
               steps {
                   WithMaven(maven : 'maven'){
-              		    mvn test
+              		    sh'mvn test'
                  }
      }
 		
@@ -22,7 +22,7 @@ pipeline {
      stage("SonarQube Analysis"){    
 			   steps {
                   WithMaven(maven : 'maven'){
-              		    mvn deploy
+              		    sh'mvn deploy'
                  }
       }                  
 	
