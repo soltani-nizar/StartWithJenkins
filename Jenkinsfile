@@ -1,12 +1,8 @@
 pipeline {
     agent any
-	    tools { 
-        maven 'maven' 
-        jdk 'jdk' 
-    }
-    stages {
+	 stages {
    
-    stage("Build Application and Upload to Nexus"){            
+    stage("Build Application"){            
 				steps {
               		    WithMaven(maven : 'maven'){
               		   sh'mvn clean compile'
