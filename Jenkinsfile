@@ -17,6 +17,12 @@ pipeline {
         }
     }
       
+         stage('docker build stage') {
+             steps {
+                bat "docker build --tag="cont1:1.0.0" -f ./infrastructure/Dockerfile"
+                bat "docker run -d --name CRM1 cont1:1.0.0"
+        }
+    }
 
   }
 
