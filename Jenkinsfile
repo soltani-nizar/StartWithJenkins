@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Compile stage') {
             steps {
-                bat "mvn clean compile" 
+                bat "mvn clean install -P FullStack" 
         }
     }
  stage('sonar scanner stage') {
@@ -16,17 +16,9 @@ pipeline {
                 bat "sonar-scanner"
         }
     }
-         stage('testing stage') {
-             steps {
-                bat "mvn test"
-        }
-    }
+       
 
-          stage('deployment stage') {
-              steps {
-                bat "mvn clean deploy -Dmaven.test.skip=true"
-        }
-    }
+      
 
   }
 
