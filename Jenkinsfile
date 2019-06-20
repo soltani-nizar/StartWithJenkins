@@ -13,11 +13,9 @@ pipeline {
     }
  stage('sonar scanner stage') {
              steps {
-                bat "sonar-scanner"
+                bat "mvn sonar:sonar"
         }
     }
-       
-
       
 
   }
