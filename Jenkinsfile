@@ -11,7 +11,11 @@ pipeline {
                 bat "mvn clean compile" 
         }
     }
-
+ stage('sonar scanner stage') {
+             steps {
+                bat "sonar-scanner"
+        }
+    }
          stage('testing stage') {
              steps {
                 bat "mvn test"
