@@ -19,7 +19,7 @@ pipeline {
       
          stage('docker build stage') {
              steps {
-                bat "mv crm-application/target/crm-application.war infrastructure"
+                bat "Move-Item crm-application/target/crm-application.war infrastructure"
                  bat 'cd infrastructure; docker build --tag="cont1:1.0.0" .'
                 bat "docker run -d --name CRM1 cont1:1.0.0"
         }
